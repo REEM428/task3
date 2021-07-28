@@ -1,0 +1,31 @@
+<html>
+<head>
+	<style>
+ body {
+     background-color: DarkKhaki ;
+  opacity: 0.6;
+}
+ p {  text-align: center; } 
+</style>
+<title>star coffee </title>
+</head>
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "4538a843-785e-4b49-af33-db938c219e09", // The ID of this integration.
+      region: "eu-gb", // The region your integration is hosted in.
+      serviceInstanceID: "0f5972b9-dedc-45dd-8eea-06841f30fd88", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+<body>
+	<div class='p'>
+	<h1>Welcome to Star Cafe </h1>
+</div>
+
+</body>
+</html>

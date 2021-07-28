@@ -1,0 +1,582 @@
+{
+  "intents": [
+    {
+      "intent": "Brownies",
+      "examples": [
+        {
+          "text": "brownie"
+        },
+        {
+          "text": "I want brownie"
+        },
+        {
+          "text": "Kinds of brownies"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "candies",
+      "examples": [
+        {
+          "text": "Candy varieties"
+        },
+        {
+          "text": "dessert list"
+        },
+        {
+          "text": "What do you have to eat"
+        },
+        {
+          "text": "What do you recommend with coffee?"
+        },
+        {
+          "text": "What is the sweetness?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Cheesecake",
+      "examples": [
+        {
+          "text": "Cheesecake"
+        },
+        {
+          "text": "i want Cheesecake"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "cold_drinks",
+      "examples": [
+        {
+          "text": "cold drinks"
+        },
+        {
+          "text": "The best cold drinks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Cookies",
+      "examples": [
+        {
+          "text": "cookies"
+        },
+        {
+          "text": "I want cookies"
+        },
+        {
+          "text": "Kinds of cookies"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "definition",
+      "examples": [
+        {
+          "text": "What are you doing"
+        },
+        {
+          "text": "What do you offer"
+        },
+        {
+          "text": "Who are you?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "drinks",
+      "examples": [
+        {
+          "text": "Drinks list"
+        },
+        {
+          "text": "What are the special drinks?"
+        },
+        {
+          "text": "What drinks are available?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "end",
+      "examples": [
+        {
+          "text": "Thanks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "hot_drinks",
+      "examples": [
+        {
+          "text": "hot drink"
+        },
+        {
+          "text": "The best hot drinks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "offer",
+      "examples": [
+        {
+          "text": "what do you have"
+        },
+        {
+          "text": "What do you offer"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Pancake",
+      "examples": [
+        {
+          "text": "i like Pancake"
+        },
+        {
+          "text": "I want Pancake"
+        },
+        {
+          "text": "Pancake"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Reservation",
+      "examples": [
+        {
+          "text": "Can I book to come"
+        },
+        {
+          "text": "Reservation"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Waffle",
+      "examples": [
+        {
+          "text": "i want Waffle"
+        },
+        {
+          "text": "Waffle"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Welcome",
+      "examples": [
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Worktime",
+      "examples": [
+        {
+          "text": "time work"
+        },
+        {
+          "text": "When are the working hours?"
+        },
+        {
+          "text": "when does it close"
+        },
+        {
+          "text": "when does it open"
+        },
+        {
+          "text": "When does the service start?"
+        },
+        {
+          "text": "Worktime"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1627369306876",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We have many hot and cold drinks. What do you prefer?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#drinks",
+      "dialog_node": "node_10_1627370883493",
+      "previous_sibling": "node_3_1627371390220"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We welcome you to our cafe: we have cold and hot drinks and some desserts"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#offer",
+      "dialog_node": "node_10_1627376880265",
+      "previous_sibling": "node_10_1627377287188"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We are glad to see you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#end",
+      "dialog_node": "node_10_1627377287188",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "\nCappuccino\nLatte \nAmericano\nHot chocolate\nEsprecsso\nTutkish coffee\nMacchiato \n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#hot_drinks",
+      "dialog_node": "node_1_1627374117905",
+      "previous_sibling": "node_8_1627375646805"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Cookies Nutella \nCookies lotus\nCookies peanut butter\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Cookies",
+      "dialog_node": "node_1_1627374773024",
+      "previous_sibling": "node_7_1627374904489"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm a special system to get the best service. Welcome to \"Coffee Stars\""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#definition",
+      "dialog_node": "node_2_1627370024763",
+      "previous_sibling": "node_10_1627370883493"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ice chocolate \nClassis mojito \nIce latte \nRed velvet latte\nIced Americano \nSpanish latte\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#cold_drinks",
+      "dialog_node": "node_3_1627371390220",
+      "previous_sibling": "node_1_1627374117905"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We start work from 7 am and close at 12 am Please come anytime we welcome you"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Worktime",
+      "dialog_node": "node_3_1627376236958",
+      "previous_sibling": "node_3_1627376453912"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We welcome you without reservation"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Reservation",
+      "dialog_node": "node_3_1627376453912",
+      "previous_sibling": "node_10_1627376880265"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "strawberry cheesecake\nLotus cheesecake\nOreo cheesecake\nKinder cheesecake\nPistachio cheesecake"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Cheesecake",
+      "dialog_node": "node_6_1627375863217",
+      "previous_sibling": "node_3_1627376236958"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "We have a lot: Cookies, Baronnaise, Waffle, Cheesecake and Pancake"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#candies",
+      "dialog_node": "node_7_1627374468104",
+      "previous_sibling": "node_1_1627374773024"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Brownies Nutella\nBrownies lotus\nBrownies peanut butter\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Brownies",
+      "dialog_node": "node_7_1627374904489",
+      "previous_sibling": "node_6_1627375863217"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good evening"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Welcome",
+      "dialog_node": "node_8_1627369306876",
+      "previous_sibling": "node_2_1627370024763"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Waffle Nutella \nWaffle lotus\nWaffle peanut butter\nWaffle with fruits"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Waffle",
+      "dialog_node": "node_8_1627375404117",
+      "previous_sibling": "node_7_1627374468104"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Pancake Nutella\nPancake lotus\nPancake peanut butter\nPancake with fruits\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Pancake",
+      "dialog_node": "node_8_1627375646805",
+      "previous_sibling": "node_8_1627375404117"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "rr",
+  "language": "en",
+  "description": ""
+}
